@@ -25,5 +25,11 @@
         justify-content: space-between;
         align-items: center;
         height: 100px;
+        &__card {
+            img {
+                margin-left: 10px;
+                border-radius: 7px;
+            }
+        }
     }
 </style>

@@ -28,8 +28,8 @@
 
 <style lang="scss" scoped>
     header {
-        background-color: lightgray;
-        // background-color: #f8f9fc;
+        // background-color: lightgray;
+        background-color: #f8f9fc;
         clip-path: ellipse(120% 100% at 50% 0%);
     }
 </style>

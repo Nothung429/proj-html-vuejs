@@ -59,6 +59,10 @@
     .links {        
         display: flex;
         padding: 20px 0;
+        &__social, &__company, &__useful, &__newsletter {
+            width: 25%;
+            padding: 0 20px;
+        }
         &__social {
             &__logo {
                 max-width: 120px;
