@@ -1,9 +1,11 @@
 <template>
     <main>
-        <h2>content go here</h2>
-        <MainFeatures/>
-        <MainInfo/>
-        <MainPrice/>
+        <div class="container">
+            <h2>content go here</h2>
+            <MainFeatures/>
+            <MainInfo/>
+            <MainPrice/>
+        </div>
     </main>
 </template>
 
@@ -25,6 +27,6 @@
 <style lang="scss" scoped>
     main {
         height: 300px;
-        background-color: lightcoral;
+        background-color: lightgreen;
     }
 </style>

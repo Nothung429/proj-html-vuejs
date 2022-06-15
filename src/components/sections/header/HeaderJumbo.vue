@@ -13,14 +13,6 @@
                 <img src="../../../assets/img/about.png" alt="jumbo img">
             </div>
         </div>
-        <div class="jumbo__partner">
-            <img src="../../../assets/img/amazon.svg" alt="partner logo">
-            <img src="../../../assets/img/google.svg" alt="partner logo">
-            <img src="../../../assets/img/lenovo.svg" alt="partner logo">
-            <img src="../../../assets/img/paypal.svg" alt="partner logo">
-            <img src="../../../assets/img/shopify.svg" alt="partner logo">
-            <img src="../../../assets/img/spotify.svg" alt="partner logo">
-        </div>
     </div>
 </template>
 
@@ -38,8 +30,6 @@
             align-items: center;
             padding: 20px 0;
             height: 500px;
-            background-color: lightgray;
-            border-bottom: 2px solid red;
             &__description {
                 width: 40%;
             }
@@ -49,17 +39,6 @@
                 img {
                     object-fit: contain;
                 }
-            }
-        }
-        &__partner {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 200px;
-            background-color: lightgray;
-            img {
-                max-width: 100px;
-                margin: 0 20px;
             }
         }
     }

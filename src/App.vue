@@ -1,11 +1,8 @@
-
 <template>
     <div id="app">
-        <div class="container">
-            <BaseHeader/>
-            <BaseMain/>
-            <BaseFooter/>
-        </div>
+        <BaseHeader/>
+        <BaseMain/>
+        <BaseFooter/>
     </div>
 </template>
 

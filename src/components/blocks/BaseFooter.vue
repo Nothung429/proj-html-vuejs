@@ -1,7 +1,12 @@
 <template>
     <footer>
-        <FooterLinks/>
-        <FooterPayment/>
+        <div class="container">
+            <FooterLinks/>
+        </div>
+        <hr>
+        <div class="container">
+            <FooterPayment/>
+        </div>
     </footer>
 </template>
 
@@ -19,5 +24,8 @@
 </script>
 
 <style lang="scss" scoped>
-
+    footer {
+        background-color: #202942;
+        color: #fff;
+    }
 </style>

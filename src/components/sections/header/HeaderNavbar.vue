@@ -32,7 +32,6 @@
         justify-content: space-between;
         align-items: center;
         height: 100px;
-        background-color: lightgreen;
         &__logo {
             max-width: 180px;
         }
