@@ -1,5 +1,6 @@
 <template>
     <main>
+        <h2>content go here</h2>
         <MainFeatures/>
         <MainInfo/>
         <MainPrice/>
@@ -22,5 +23,8 @@
 </script>
 
 <style lang="scss" scoped>
-
+    main {
+        height: 300px;
+        background-color: lightcoral;
+    }
 </style>
