@@ -1,7 +1,6 @@
 <template>
     <main>
         <div class="container">
-            <h2>content go here</h2>
             <MainFeatures/>
             <MainInfo/>
             <MainPrice/>
@@ -26,7 +25,6 @@
 
 <style lang="scss" scoped>
     main {
-        height: 300px;
         background-color: lightgreen;
     }
 </style>
