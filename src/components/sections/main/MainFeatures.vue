@@ -1,34 +1,18 @@
 <template>
     <section class="features my-5">
-        <div class="features__top">
+        <div class="features__top pt-5">
             <h3>Key Features</h3>
-            <p>Start working with <span class="logo-name">Landrick</span> that can provide everything you need to generate awereness, drive traffic, connect</p>
+            <p>Start working with <span class="logo-name">Landrick</span> that can provide everything you need to generate <br> awereness, drive traffic, connect</p>
         </div>
-        <div class="features__bottom row">
-            <div class="card col-3">
-                <i class="fa-solid fa-layer-group"></i>
-                <h4>Modular</h4>
-                <p>Composed in a pseudo-Latin language which more or less corresponds</p>
-                <a href="">Read More ></a>
-            </div>
-            <div class="card col-3">
-                <i class="fa-solid fa-display"></i>
-                <h4>Responsive</h4>
-                <p>Composed in a pseudo-Latin language which more or less corresponds</p>
-                <a href="">Read More ></a>
-            </div>
-            <div class="card col-3">
-                <i class="fa-solid fa-paintbrush"></i>
-                <h4>Customizable</h4>
-                <p>Composed in a pseudo-Latin language which more or less corresponds</p>
-                <a href="">Read More ></a>
-            </div>
-            <div class="card col-3">
-                <i class="fa-solid fa-minimize"></i>
-                <h4>Scalable</h4>
-                <p>Composed in a pseudo-Latin language which more or less corresponds</p>
-                <a href="">Read More ></a>
-            </div>
+        <div class="features__bottom py-5">
+            <ul class="d-flex row">
+                <li class="col-3 features__bottom__card" v-for="(feature, index) in features" :key="index">
+                    <div><i :class="feature.icon"></i></div>
+                    <h5>{{feature.title}}</h5>
+                    <p>{{feature.text}}</p>
+                    <a :href="feature.url">{{feature.link}}</a>
+                </li>
+            </ul>
         </div>
     </section>
 </template>
@@ -36,12 +20,73 @@
 <script>
     export default {
         name: "MainFeatures",
+        data () {
+            return {
+                features: [
+                    {
+                        "icon": "fa-solid fa-layer-group",
+                        "link": "Read More >",
+                        "url": "#",
+                        "title": "Modular",
+                        "text": "Composed in a pseudo-Latin language which more or less corresponds",                        
+                    },
+                    {
+                        "icon": "fa-solid fa-display",
+                        "link": "Read More >",
+                        "url": "#",
+                        "title": "Responsive",
+                        "text": "Composed in a pseudo-Latin language which more or less corresponds",                        
+                    },
+                    {
+                        "icon": "fa-solid fa-paintbrush",
+                        "link": "Read More >",
+                        "url": "#",
+                        "title": "Customizable",
+                        "text": "Composed in a pseudo-Latin language which more or less corresponds",                        
+                    },
+                    {
+                        "icon": "fa-solid fa-minimize",
+                        "link": "Read More >",
+                        "url": "#",
+                        "title": "Scalable",
+                        "text": "Composed in a pseudo-Latin language which more or less corresponds",                        
+                    },
+                ]
+            }
+        }
     }
 </script>
 
 <style lang="scss" scoped>
     .features {
-        background-color: lightcoral;
+        &__bottom {
+            ul {
+                max-width: 1320px;
+                margin: 0;
+                justify-content: space-between;
+            }
+            &__card {
+                width: 300px;
+                padding: 20px;
+                border: 1px solid #f4f5f6;
+                border-radius: 5px;
+                div {
+                    height: 60px;
+                    width: 60px;
+                    line-height: 60px;
+                    text-align: center;
+                    background-color: #eaeefb;
+                    color: #2f55d4;
+                    border-radius: 10px;
+                    font-size: 22px;
+                }
+                p {
+                    color: #a7afb8;
+                }
+            }
+            &__card > * {
+                margin-bottom: 20px;
+            }
+        }
     }
-
 </style>
