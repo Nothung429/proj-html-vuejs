@@ -4,11 +4,13 @@
             <p>© 2020 Landrick. Design with <span class="red">♥</span> by Shreethemes.</p>
         </div>
         <div class="payment__card">
-            <img src="../../../assets/img/american-ex.png" alt="card info">
-            <img src="../../../assets/img/discover.png" alt="card info">
-            <img src="../../../assets/img/master-card.png" alt="card info">
-            <img src="../../../assets/img/paypal.png" alt="card info">
-            <img src="../../../assets/img/visa.png" alt="card info">
+            <ul class="d-flex">
+                <li class="mx-2" v-for="(cardPayment, index) in cardPayments" :key="index">
+                    <a :href="cardPayment.url">
+                        <img :src="cardPayment.img" :alt="cardPayment.text">
+                    </a>
+                </li>
+            </ul>
         </div>
     </div>
 </template>
@@ -16,6 +18,37 @@
 <script>
     export default {
         name: "FooterPayment",
+        data () {
+            return {
+                cardPayments: [
+                    {
+                        "img": require("../../../assets/img/american-ex.png"),
+                        "url": "#",
+                        "text": "american express"
+                    },
+                    {
+                        "img": require("../../../assets/img/discover.png"),
+                        "url": "#",
+                        "text": "discover"
+                    },
+                    {
+                        "img": require("../../../assets/img/master-card.png"),
+                        "url": "#",
+                        "text": "mastercard"
+                    },
+                    {
+                        "img": require("../../../assets/img/paypal.png"),
+                        "url": "#",
+                        "text": "paypal"
+                    },
+                    {
+                        "img": require("../../../assets/img/visa.png"),
+                        "url": "#",
+                        "text": "visa"
+                    },
+                ]
+            }
+        }
     }
 </script>
 
