@@ -1,7 +1,7 @@
 <template>
     <div class="payment">
         <div class="payment__credits">
-            <p>© 2020 Landrick. Design with ♥ by Shreethemes.</p>
+            <p>© 2020 Landrick. Design with <span class="red">♥</span> by Shreethemes.</p>
         </div>
         <div class="payment__card">
             <img src="../../../assets/img/american-ex.png" alt="card info">
