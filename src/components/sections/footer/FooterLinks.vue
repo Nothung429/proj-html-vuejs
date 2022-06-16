@@ -8,7 +8,7 @@
             <div class="links__social__socials">
                 <ul class="d-flex">
                     <li class="mx-2" v-for="(socialLink, index) in socialLinks" :key="index" :class="{active : socialLink.current}">
-                        <a :href="socialLink.url"><i :class="socialLink.text"></i></a>
+                        <a :href="socialLink.url"><i :class="socialLink.icon"></i></a>
                     </li>
                 </ul>
             </div>
@@ -49,22 +49,22 @@
             return {
                 socialLinks: [
                     {
-                        "text": "fa-brands fa-facebook-f",
+                        "icon": "fa-brands fa-facebook-f",
                         "url": "#",
                         "current": false,
                     },
                     {
-                        "text": "fa-brands fa-instagram",
+                        "icon": "fa-brands fa-instagram",
                         "url": "#",
                         "current": false,
                     },
                     {
-                        "text": "fa-brands fa-twitter",
+                        "icon": "fa-brands fa-twitter",
                         "url": "#",
                         "current": false,
                     },
                     {
-                        "text": "fa-brands fa-linkedin-in",
+                        "icon": "fa-brands fa-linkedin-in",
                         "url": "#",
                         "current": true,
                     },
