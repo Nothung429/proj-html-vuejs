@@ -5,10 +5,9 @@
         </div>
         <div class="navbar__links">
             <ul>
-                <li>home</li>
-                <li>home</li>
-                <li>home</li>
-                <li>home</li>
+                <li v-for="(headerLink, index) in headerLinks" :key="index" :class="{active : headerLink.current}">
+                    <a :href="headerLink.url"><i :class="headerLink.icon"></i> {{headerLink.text}}</a>
+                </li>
             </ul>
         </div>
         <div class="navbar__buttons">
@@ -23,6 +22,36 @@
 <script>
     export default {
         name: "HeaderNavbar",
+        data () {
+            return {
+                headerLinks: [
+                    {
+                        "icon": "",
+                        "text": "Home",
+                        "url": "#",
+                        "current": false,
+                    },
+                    {
+                        "icon": "fa-solid fa-chevron-down",
+                        "text": "Landing",
+                        "url": "#",
+                        "current": true,
+                    },
+                    {
+                        "icon": "fa-solid fa-chevron-down",
+                        "text": "Pages",
+                        "url": "#",
+                        "current": false,
+                    },
+                    {
+                        "icon": "fa-solid fa-chevron-down",
+                        "text": "Docs",
+                        "url": "#",
+                        "current": false,
+                    },
+                ]
+            }
+        }
     }
 </script>
 
@@ -40,6 +69,14 @@
                 display: flex;
                 li {
                     padding: 0 15px;
+                    a {
+                        text-decoration: none;
+                        font-weight: 600;
+                        color: #000;
+                    }
+                }
+                .active a{
+                    color: #2f55d4;
                 }
             }
         }
