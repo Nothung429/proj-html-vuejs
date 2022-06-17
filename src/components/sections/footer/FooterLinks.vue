@@ -36,7 +36,7 @@
                 <label for="input">Write your email <span class="red">*</span></label>
                 <input type="text" placeholder="Your email:">
                 <br>
-                <button type="submit">Subscribe</button>
+                <button @click="activation" :class="{'change' : active}">Subscribe</button>
             </form>
         </div>
     </div>
@@ -47,6 +47,7 @@
         name: "FooterLinks",
         data () {
             return {
+                active: false,
                 socialLinks: [
                     {
                         "icon": "fa-brands fa-facebook-f",
@@ -152,6 +153,11 @@
                     },
                 ]
             }
+        },
+        methods: {
+            activation() {
+                this.active = !this.active;
+            },
         }
     }
 </script>
@@ -210,6 +216,10 @@
             }
             form > * {
                 margin: 10px 0;
+            }
+            .change {
+                color: #2f55d4;
+                background-color: #e4e9f8;
             }
         }
     }
