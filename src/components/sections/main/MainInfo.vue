@@ -78,6 +78,7 @@
                 }
             }
             &__img {
+                text-align: right;
                 img {
                     max-height: 450px;
                 }

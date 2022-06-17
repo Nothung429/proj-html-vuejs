@@ -5,35 +5,21 @@
             <p>Start working with <span class="logo-name">Landrick</span> that can provide everything you need to generate <br> awereness, drive traffic, connect</p>
         </div>
         <div class="price__bottom row justify-content-evenly my-5">
-            <div class="price__bottom__card col-4">
+            <div class="price__bottom__card col-3" @mouseover="hovered1 = true" @mouseleave="hovered1 = false" :class="{'grow': hovered1}">
                 <h4 class="type">Basic</h4>
                 <h2>$9.00</h2>
                 <p>Per Month</p>
                 <p>All the basics for businesses that are just getting started.</p>
                 <hr>
-                <div>
-                    <ul>
-                        <li>
-                            <i class="fa-regular fa-circle-check"></i> <span>Full Access</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-circle-check"></i> <span>Enhanced Security</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-circle-check"></i> <span>Source Files</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-circle-check"></i> <span>1 Domain Free</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-circle-check"></i> <span>Enhanced Enhanciation</span>
-                        </li>
-                    </ul>
-                    <button class="try">Buy Now</button>
-                    <p>*No credit card required</p>
-                </div>
+                <ul>
+                    <li class="my-2" v-for="(priceAdvantage, index) in priceAdvantages" :key="index">
+                        <i :class="priceAdvantage.icon"></i> <span class="ms-2">{{priceAdvantage.text}}</span>
+                    </li>
+                </ul>
+                <button class="try">Buy Now</button>
+                <p>*No credit card required</p>
             </div>
-            <div class="price__bottom__card col-4">
+            <div class="price__bottom__card col-3" @mouseover="hovered2 = true" @mouseleave="hovered2 = false" :class="{'grow': hovered2}">
                 <div class="ribbon ribbon-top-right">
                     <span>Best</span>
                 </div>
@@ -42,55 +28,27 @@
                 <p>Per Month</p>
                 <p>Better for growing businesses that want more customer.</p>
                 <hr>
-                <div>
-                    <ul>
-                        <li>
-                            <i class="fa-regular fa-circle-check"></i> <span>Full Access</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-circle-check"></i> <span>Enhanced Security</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-circle-check"></i> <span>Source Files</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-circle-check"></i> <span>1 Domain Free</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-circle-check"></i> <span>Enhanced Enhanciation</span>
-                        </li>
-                    </ul>
-                    <button class="try">Buy Now</button>
-                    <p>*No credit card required</p>
-                </div>
+                <ul>
+                    <li class="my-2" v-for="(priceAdvantage, index) in priceAdvantages" :key="index">
+                        <i :class="priceAdvantage.icon"></i> <span class="ms-2">{{priceAdvantage.text}}</span>
+                    </li>
+                </ul>
+                <button class="try">Buy Now</button>
+                <p>*No credit card required</p>
             </div>
-            <div class="price__bottom__card col-4">
+            <div class="price__bottom__card col-3" @mouseover="hovered3 = true" @mouseleave="hovered3 = false" :class="{'grow': hovered3}">
                 <h4 class="type">Enterprise</h4>
                 <h2>$79.00</h2>
                 <p>Per Month</p>
                 <p>Advanced features for pros who need more customization.</p>
                 <hr>
-                <div>
-                    <ul>
-                        <li>
-                            <i class="fa-regular fa-circle-check"></i> <span>Full Access</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-circle-check"></i> <span>Enhanced Security</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-circle-check"></i> <span>Source Files</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-circle-check"></i> <span>1 Domain Free</span>
-                        </li>
-                        <li>
-                            <i class="fa-regular fa-circle-check"></i> <span>Enhanced Enhanciation</span>
-                        </li>
-                    </ul>
-                    <button class="try">Buy Now</button>
-                    <p>*No credit card required</p>
-                </div>
+                <ul>
+                    <li class="my-2" v-for="(priceAdvantage, index) in priceAdvantages" :key="index">
+                        <i :class="priceAdvantage.icon"></i> <span class="ms-2">{{priceAdvantage.text}}</span>
+                    </li>
+                </ul>
+                <button class="try">Buy Now</button>
+                <p>*No credit card required</p>
             </div>
         </div>
     </section>
@@ -99,6 +57,35 @@
 <script>
     export default {
         name: "MainPrice",
+        data () {
+            return {
+                hovered1: false,
+                hovered2: false,
+                hovered3: false,
+                priceAdvantages: [
+                    {
+                        "icon": "fa-regular fa-circle-check",
+                        "text": "Full Access",
+                    },
+                    {
+                        "icon": "fa-regular fa-circle-check",
+                        "text": "Enhanced Security",
+                    },
+                    {
+                        "icon": "fa-regular fa-circle-check",
+                        "text": "Source Files",
+                    },
+                    {
+                        "icon": "fa-regular fa-circle-check",
+                        "text": "1 Domain Free",
+                    },
+                    {
+                        "icon": "fa-regular fa-circle-check",
+                        "text": "Enhanced Enhanciation",
+                    },
+                ]
+            }
+        }
     }
 </script>
 
@@ -113,13 +100,18 @@
             &__card > * {
                 margin-bottom: 20px;
             }
+            .grow { 
+                transition: all .2s ease-in-out;
+                transform: scale(1.1);
+                box-shadow: 0 5px 5px -3px #2f55d4;
+            }
             &__card {
-                width: 350px;
                 padding: 20px;
                 border: 1px solid #f4f5f6;
                 border-radius: 10px;
                 position: relative;
                 z-index: 0;
+                box-shadow: 0 5px 5px -3px gray;
                 color: #8492a6;
                 .try {
                     padding: 8px 18px;
@@ -151,7 +143,7 @@
                     color: #2f55d4;
                 }
                 ul li span {
-                    color: #000;
+                    color: #8492a6;
                 }
 
                 .ribbon {
@@ -171,11 +163,9 @@
                     position: absolute;
                     display: block;
                     width: 225px;
-                    padding: 8px 0;
+                    padding: 5px 0;
                     background-color: #f17425;
                     color: #fff;
-                    font: 700 18px/1 'Lato', sans-serif;
-                    text-shadow: 0 1px 1px rgba(0,0,0,.2);
                     text-align: center;
                 }
                 .ribbon-top-right {
