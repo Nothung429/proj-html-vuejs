@@ -5,7 +5,7 @@
             <p>Start working with <span class="logo-name">Landrick</span> that can provide everything you need to generate <br> awereness, drive traffic, connect</p>
         </div>
         <div class="price__bottom row justify-content-evenly my-5">
-            <div class="price__bottom__card col-3" @mouseover="hovered1 = true" @mouseleave="hovered1 = false" :class="{'grow': hovered1}">
+            <div class="price__bottom__card col-3" @mouseover="hovered = true" @mouseleave="hovered = false" :class="{'grow': hovered}">
                 <h4 class="type">Basic</h4>
                 <h2>$9.00</h2>
                 <p>Per Month</p>
@@ -19,7 +19,7 @@
                 <button class="try">Buy Now</button>
                 <p>*No credit card required</p>
             </div>
-            <div class="price__bottom__card col-3" @mouseover="hovered2 = true" @mouseleave="hovered2 = false" :class="{'grow': hovered2}">
+            <div class="price__bottom__card col-3" @mouseover="hovered = true" @mouseleave="hovered = false" :class="{'grow': hovered}">
                 <div class="ribbon ribbon-top-right">
                     <span>Best</span>
                 </div>
@@ -36,7 +36,7 @@
                 <button class="try">Buy Now</button>
                 <p>*No credit card required</p>
             </div>
-            <div class="price__bottom__card col-3" @mouseover="hovered3 = true" @mouseleave="hovered3 = false" :class="{'grow': hovered3}">
+            <div class="price__bottom__card col-3" @mouseover="hovered = true" @mouseleave="hovered = false" :class="{'grow': hovered}">
                 <h4 class="type">Enterprise</h4>
                 <h2>$79.00</h2>
                 <p>Per Month</p>
@@ -59,9 +59,7 @@
         name: "MainPrice",
         data () {
             return {
-                hovered1: false,
-                hovered2: false,
-                hovered3: false,
+                hovered: false,
                 priceAdvantages: [
                     {
                         "icon": "fa-regular fa-circle-check",
@@ -101,7 +99,9 @@
                 margin-bottom: 20px;
             }
             .grow { 
-                transition: all .2s ease-in-out;
+                transition: all 0.5s ease-in-out;
+            }
+            .grow:hover {
                 transform: scale(1.1);
                 box-shadow: 0 5px 5px -3px #2f55d4;
             }
@@ -145,7 +145,6 @@
                 ul li span {
                     color: #8492a6;
                 }
-
                 .ribbon {
                     width: 150px;
                     height: 150px;
@@ -189,8 +188,7 @@
                     top: 30px;
                     transform: rotate(45deg);
                 }
-            }
-            
+            }            
         }
     }
 </style>
