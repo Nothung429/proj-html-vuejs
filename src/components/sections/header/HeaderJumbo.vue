@@ -6,7 +6,7 @@
                 <h1>A Complete <br> Developer Toolset</h1>
                 <p class="jumbo__hero__description__text">Launch your campaign and benefit from our expertise on designing and managing conversion centered bootstrap4 html page.</p>
                 <button class="jumbo__hero__description__btn1">Get started</button>
-                <button class="jumbo__hero__description__btn2">Documentation</button>
+                <button class="jumbo__hero__description__btn2" @click="activation" :class="{'change' : active}">Documentation</button>
                 <p class="jumbo__hero__description__version">Current Version: v2.6.0</p>
             </div>
             <div class="jumbo__hero__img">
@@ -19,6 +19,16 @@
 <script>
     export default {
         name: "HeaderJumbo",
+        data () {
+            return {
+                active: false,
+            }
+        },
+        methods: {
+            activation() {
+                this.active = !this.active;
+            },
+        }
     }
 </script>
 
@@ -67,6 +77,10 @@
                     color: #2f55d4;
                     border: 1px solid #2f55d4;
                 }
+            }
+            .change {
+                color: #e4e9f8;
+                background-color: #2f55d4;
             }
             &__img {
                 width: 50%;

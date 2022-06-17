@@ -12,9 +12,9 @@
         </div>
         <div class="navbar__buttons">
             <button class="navbar__buttons__search"><i class="fa-solid fa-magnifying-glass"></i></button>
-            <button class="navbar__buttons__account"><i class="fa-brands fa-github"></i></button>
-            <button class="navbar__buttons__account"><i class="fa-brands fa-stack-overflow"></i></button>
-            <button class="navbar__buttons__account"><i class="fa-regular fa-user"></i></button>
+            <button class="navbar__buttons__account" @click="activation1" :class="{'change' : active1}"><i class="fa-brands fa-github"></i></button>
+            <button class="navbar__buttons__account" @click="activation2" :class="{'change' : active2}"><i class="fa-brands fa-stack-overflow"></i></button>
+            <button class="navbar__buttons__account" @click="activation3" :class="{'change' : active3}"><i class="fa-regular fa-user"></i></button>
         </div>
     </div>
 </template>
@@ -24,6 +24,9 @@
         name: "HeaderNavbar",
         data () {
             return {
+                active1: false,
+                active2: false,
+                active3: false,
                 headerLinks: [
                     {
                         "icon": "",
@@ -50,6 +53,17 @@
                         "current": false,
                     },
                 ]
+            }
+        },
+        methods: {
+            activation1() {
+                this.active1 = !this.active1;
+            },
+            activation2() {
+                this.active2 = !this.active2;
+            },
+            activation3() {
+                this.active3 = !this.active3;
             }
         }
     }
@@ -81,6 +95,10 @@
             }
         }
         &__buttons {
+            .change {
+                color: #e4e9f8;
+                background-color: #2f55d4;
+            }
             &__search, &__account {
                 font-size: 20px;
                 height: 40px;
