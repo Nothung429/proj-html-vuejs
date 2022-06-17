@@ -6,7 +6,7 @@
         </div>
         <div class="features__bottom py-5">
             <ul class="d-flex row">
-                <li class="col-3 features__bottom__card" v-for="(feature, index) in features" :key="index">
+                <li class="col-3 features__bottom__card" v-for="(feature, index) in features" :key="index" @mouseover="hovered = true" @mouseleave="hovered = false" :class="{'going-up': hovered}">
                     <div><i :class="feature.icon"></i></div>
                     <h5>{{feature.title}}</h5>
                     <p>{{feature.text}}</p>
@@ -22,6 +22,7 @@
         name: "MainFeatures",
         data () {
             return {
+                hovered: false,
                 features: [
                     {
                         "icon": "fa-solid fa-layer-group",
@@ -70,6 +71,7 @@
                 padding: 20px;
                 border: 1px solid #f4f5f6;
                 border-radius: 5px;
+                position: relative;
                 div {
                     height: 60px;
                     width: 60px;
@@ -83,6 +85,13 @@
                 p {
                     color: #a7afb8;
                 }
+            }
+            .going-up {
+                transition: transform 1s;
+            }
+            .going-up:hover {
+                transform: translate(0px, -20px);
+                box-shadow: 0 5px 5px -3px #2f55d4;
             }
             &__card > * {
                 margin-bottom: 20px;
